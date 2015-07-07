@@ -16,6 +16,9 @@ $(function() {
 	$spotifySearch.on('submit', function(event) {
 		event.preventDefault();
 
+		$results.empty();
+    // $loading.show();
+
   	$.get(
   		'https://api.spotify.com/v1/search?type=track&q=' + $track.val(),
   		function(data) {
@@ -26,7 +29,9 @@ $(function() {
   					trackName = data.tracks.items[i].name;
   					artistName = data.tracks.items[i].artists[0].name;
   					albumName = data.tracks.items[i].album.name;
-  					$results.append(trackTemplate(trackName,artistName,albumName));
+  					albumArt = data.tracks.items[i].album.images[1].url;
+  					trackPreview = data.tracks.items[i].preview_url;
+  					$results.append(trackTemplate(trackName,artistName,albumName,albumArt,trackPreview));
   				}
   			}
   		}

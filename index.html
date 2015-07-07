@@ -7,6 +7,9 @@
   <!-- bootstrap css -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
 
+  <!-- google font css -->
+  <link href='http://fonts.googleapis.com/css?family=Ubuntu:400,700' rel='stylesheet' type='text/css'>
+
   <!-- custom styles -->
   <link rel="stylesheet" type="text/css" href="style.css">
 
@@ -17,19 +20,21 @@
     <div class="row">
       <div class="col-md-6 col-md-offset-3">
         <div class="text-center">
-          <h1>Search for Songs</h1>
+          <h1>SEARCH FOR SONGS</h1>
           <hr>
           <form id="spotify-search">
             <div class="form-group">
               <input class="form-control" id="track" placeholder="Song Title" autofocus>
             </div>
             <div class="form-group">
-              <input type="submit" class="btn btn-success" value="Search">
+              <input type="submit" class="btn btn-custom" value="Search">
             </div>
           </form>
-          <hr>
         </div>
         <div id="results"></div>
+      </div>
+    </div>
+  </div>
       
   
 
@@ -47,13 +52,22 @@
 
   <!-- underscore template -->
   <script type="text/template" id="trackArtist-template"> 
-      <div class="track-artist-template">
-        <li class="items"><%= trackName %> &nbsp;:&nbsp; <%= artistName %> &nbsp;:&nbsp; <%= albumName %></li>
-      </div>
-  </script> 
-      </div>
+    <div class="track-artist-template">
+        <div class="row track-info">
+          <div class="col-xs-4">
+            <img src="<%= albumArt %>" align="left" class="img-responsive img-circle" >
+          </div>
+          <div class="col-xs-8">
+            <p><%= trackName %></p>
+            <p><%= artistName %></p>
+            <p><%= albumName %></p>
+            <video controls="media" name="media"><source src="<%= trackPreview %>" type="audio/mpeg"></video>
+          </div>
+        </div>
+      
     </div>
-  </div>
+  </script> 
+      
 
 </body>
 </html>
