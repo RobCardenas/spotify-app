@@ -30,9 +30,8 @@
           <hr>
         </div>
         <div id="results"></div>
-      </div>
-    </div>
-  </div>
+      
+  
 
   <!-- jquery -->
   <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
@@ -47,6 +46,14 @@
   <script type="text/javascript" src="script.js"></script>
 
   <!-- underscore template -->
+  <script type="text/template" id="trackArtist-template"> 
+      <div class="track-artist-template">
+        <li class="items"><%= trackName %> &nbsp;:&nbsp; <%= artistName %> &nbsp;:&nbsp; <%= albumName %></li>
+      </div>
+  </script> 
+      </div>
+    </div>
+  </div>
 
 </body>
 </html>
